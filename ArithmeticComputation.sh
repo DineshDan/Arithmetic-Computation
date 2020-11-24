@@ -1,4 +1,3 @@
-echo "Welcome This problem computes different arithmetic expressions and sort the results"
 
 echo "Arithmetic Computation and Sorting"
 
@@ -8,3 +7,5 @@ echo "Arithmetic Computation and Sorting"
 a=$num1
 b=$num2
 c=$num3
+
+echo "a+b*c=$(($a+$b*$c))" 
