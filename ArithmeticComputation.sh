@@ -8,4 +8,7 @@ a=$num1
 b=$num2
 c=$num3
 
-echo "a+b*c=$(($a+$b*$c))" 
+echo "a+b*c=$(($a+$b*$c))"
+
+
+echo "a*b+c=$(($a*$b+$c))"
