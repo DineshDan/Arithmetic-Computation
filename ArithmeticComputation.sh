@@ -8,22 +8,6 @@ a=$num1
 b=$num2
 c=$num3
 
-echo "a+b*c=$(($a+$b*$c))"
-echo "a*b+c=$(($a*$b+$c))"
-echo "c+a/b=$(($c+$a/$b))"
-echo "a%b+c=$(($a%$b+$c))"
-
-		declare -A  arithmetic
-arithmetic[0]=$(($a+$b*$c))
-arithmetic[1]=$(($a*$b+$c))
-arithmetic[2]=$(($c+$a/$b))
-arithmetic[3]=$(($a%$b+$c))
-echo "a+b*c=${arithmetic[0]}"
-echo "a*b+c=${arithmetic[1]}"
-echo "c+a/b=${arithmetic[2]}"
-echo "a%b+c=${arithmetic[3]}"
-
-
 for((i=0; i<4; i++))
 do
   case $i in
@@ -43,20 +27,21 @@ do
 done
 echo "array in original order"
 echo "${arithmetic[@]}"
-for((i = 0; i<4; i++))
+for((i = 0; i<4; i++)) 
 do
 
 
-    for((j = 0; j<4; j++))
+    for((j = 0; j<4; j++)) 
     do
         if(( ${arithmetic[$j]} < ${arithmetic[$((j+1))]} ))
+        if(( ${arithmetic[$j]} > ${arithmetic[$((j+1))]} ))
         then
-            temp=${arithmetic[$j]}
-            arithmetic[$j]=${arithmetic[$((j+1))]}
-            arithmetic[$((j+1))]=$temp
+            temp=${arithmetic[$j]} 
+            arithmetic[$j]=${arithmetic[$((j+1))]}   
+            arithmetic[$((j+1))]=$temp 
         fi
     done
 done
 echo "array in descending order"
+echo "array in ascending order"
 echo "${arithmetic[@]}"
-
